@@ -1,12 +1,13 @@
 import { useState } from "react";
 import type { Todo } from "./types/Todo";
+import { TodoList } from "./TodoList";
 
 export const TodoApp = () => {
     const [todos, setTodos] = useState<Todo[]>([
         { id: 1, content: "Städa", done: false },
         { id: 2, content: "Gå ut med hunden", done: false },
         { id: 3, content: "Laga mat", done: false },
-        { id: 4, content: "Koda", done: false }
+        { id: 4, content: "Koda", done: true }
     ]);
 
     const addTodo = (todo: Todo) => {
@@ -17,7 +18,7 @@ export const TodoApp = () => {
         setTodos(todos.filter((t) => t.id !== id));
     };
 
-    const doneTodo = (id: number, done: boolean) => {
+    const toggleDone = (id: number, done: boolean) => {
         setTodos(
             todos.map((t) => {
                 if(t.id === id) {
@@ -29,6 +30,6 @@ export const TodoApp = () => {
     };
 
     return <>
-        <p>Hej</p>
+        <TodoList todos={todos}></TodoList>
     </>
 };
