@@ -22,7 +22,7 @@ export const TodoApp = () => {
         setTodos(
             todos.map((t) => {
                 if(t.id === id) {
-                    return { ...t, done: true };
+                    return { ...t, done: !t.done };
                 }
                 return t;
             })
