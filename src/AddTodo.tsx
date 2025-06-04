@@ -1,5 +1,4 @@
 import { useState, type FormEvent, type ChangeEvent } from "react";
-import type { Todo } from "./types/Todo";
 
 type AddTodoProps = {
     addTodo: (content: string) => void;

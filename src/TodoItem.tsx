@@ -1,6 +1,4 @@
-import { useState } from "react";
 import type { Todo } from "./types/Todo";
-
 
 type TodoItemProps = {
     todo: Todo;
@@ -9,7 +7,6 @@ type TodoItemProps = {
 }
 
 export const TodoItem = ({ todo, removeTodo, toggleDone }: TodoItemProps) => {
-    const [toggleTodo, setToggleTodo] = useState("");
 
     return <>
         <li key={todo.id}>
@@ -18,7 +15,6 @@ export const TodoItem = ({ todo, removeTodo, toggleDone }: TodoItemProps) => {
                 checked={todo.done} 
                 id="todoDone" 
                 onChange={() => toggleDone(todo.id, todo.done)}
-                // onChange={(e) => setToggleTodo({...todo, [e.target.id]: e.target.checked})}
             />
             {todo.content} 
             <button onClick={() => removeTodo(todo.id)}>Ta bort</button>

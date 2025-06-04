@@ -24,7 +24,7 @@ export const TodoApp = () => {
         setTodos(todos.filter((t) => t.id !== id));
     };
 
-    const toggleDone = (id: number, done: boolean) => {
+    const toggleDone = (id: number) => {
         setTodos(
             todos.map((t) => {
                 if(t.id === id) {
