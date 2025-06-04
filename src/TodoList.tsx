@@ -8,9 +8,12 @@ type TodoListProps = {
 export const TodoList = ({todos}: TodoListProps) => {
     return (
         <>
-            {todos.map((t) => (
-                <TodoItem todo={t}></TodoItem>
-            ))}
+            <h2>Att göra</h2>
+            <ul>
+                {todos.map((t) => (
+                    <TodoItem todo={t}></TodoItem>
+                ))}
+            </ul>
         </>
     );
 };

@@ -12,8 +12,8 @@ export const TodoItem = ({ todo/*, removeTodo, toggleDone */}: TodoItemProps) =>
     // const [toggle]
 
     return <>
-        <div key={todo.id}>
-            {todo.content} - {todo.done} <input type="checkbox" checked={todo.done} id="todoDone" />
-        </div>
+        <li key={todo.id}>
+            <input type="checkbox" checked={todo.done} id="todoDone" />{todo.content} 
+        </li>
     </>
 }
