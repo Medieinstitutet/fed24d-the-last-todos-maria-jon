@@ -1,7 +1,10 @@
 import "./App.css";
+import { TodoApp } from "./TodoApp";
 
 function App() {
-  return <></>;
+  return <>
+    <TodoApp></TodoApp>
+  </>;
 }
 
 export default App;
