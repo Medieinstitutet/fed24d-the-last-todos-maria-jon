@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { Todo } from "./types/Todo";
 import { TodoList } from "./TodoList";
+import { AddTodo } from "./AddTodo";
 
 export const TodoApp = () => {
     const [todos, setTodos] = useState<Todo[]>([
@@ -10,8 +11,13 @@ export const TodoApp = () => {
         { id: 4, content: "Koda", done: true }
     ]);
 
-    const addTodo = (todo: Todo) => {
-        setTodos([...todos, todo]);
+    const addTodo = (content: string) => {
+        const newTodo: Todo = {
+            id: Date.now(), 
+            content: content,
+            done: false,
+        };
+        setTodos([...todos, newTodo]);
     };
 
     const removeTodo = (id: number) => {
@@ -31,5 +37,6 @@ export const TodoApp = () => {
 
     return <>
         <TodoList todos={todos} removeTodo={removeTodo} toggleDone={toggleDone}></TodoList>
+        <AddTodo addTodo={addTodo}></AddTodo>
     </>
 };
