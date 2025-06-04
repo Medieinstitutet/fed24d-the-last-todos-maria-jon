@@ -30,6 +30,6 @@ export const TodoApp = () => {
     };
 
     return <>
-        <TodoList todos={todos}></TodoList>
+        <TodoList todos={todos} removeTodo={removeTodo} toggleDone={toggleDone}></TodoList>
     </>
 };
