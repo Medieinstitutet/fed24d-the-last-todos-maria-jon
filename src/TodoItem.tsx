@@ -16,7 +16,7 @@ export const TodoItem = ({ todo, removeTodo, toggleDone }: TodoItemProps) => {
                 id="todoDone" 
                 onChange={() => toggleDone(todo.id, todo.done)}
             />
-            {todo.content} 
+            <span className={todo.done ? "text-slate-600 italic" : "text-slate-900"}>{todo.content}</span> 
             <button className="bg-cyan-700 text-neutral-50 hover:bg-slate-900" onClick={() => removeTodo(todo.id)}>Ta bort</button>
         </li>
     </>
