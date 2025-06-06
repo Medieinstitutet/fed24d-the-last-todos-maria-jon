@@ -9,7 +9,7 @@ type TodoItemProps = {
 export const TodoItem = ({ todo, removeTodo, toggleDone }: TodoItemProps) => {
 
     return <>
-        <li key={todo.id}>
+        <li key={todo.id} className="p-2 flex gap-4 items-center justify-between">
             <input 
                 type="checkbox" 
                 checked={todo.done} 

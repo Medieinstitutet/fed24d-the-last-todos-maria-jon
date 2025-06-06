@@ -10,7 +10,6 @@ type TodoListProps = {
 export const TodoList = ({todos, removeTodo, toggleDone}: TodoListProps) => {
     return (
         <>
-            <h2>Att göra</h2>
             <ul>
                 {todos.map((t) => (
                     <TodoItem todo={t} key={t.id} removeTodo={removeTodo} toggleDone={toggleDone}></TodoItem>

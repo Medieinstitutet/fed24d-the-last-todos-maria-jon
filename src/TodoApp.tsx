@@ -45,6 +45,7 @@ export const TodoApp = () => {
     };
 
     return <>
+        <h2 className="font-medium text-xl text-slate-900">Att göra</h2>
         <TodoList todos={todos} removeTodo={removeTodo} toggleDone={toggleDone}></TodoList>
         <AddTodo addTodo={addTodo}></AddTodo>
     </>
