@@ -17,12 +17,15 @@
 
 #root {
   max-width: 90vw;
+  min-height: 100vh;
+  background-color: #f8fafc;
 }
 
 body {
   margin: 0;
   display: flex;
   place-items: center;
+  background-color: #020617;
 }
 
 h1 {
