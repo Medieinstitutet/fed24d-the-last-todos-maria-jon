@@ -15,6 +15,7 @@ export const TodoApp = () => {
     };
 
     const [todos, setTodos] = useState<Todo[]>(loadTodosFromLocalStorage);
+    const [filter, setFilter] = useState<string>("all");
 
     useEffect(() => {
         localStorage.setItem("todos", JSON.stringify(todos));
@@ -44,8 +45,34 @@ export const TodoApp = () => {
         );
     };
 
+    const sortTodos = todos.filter(todo => {
+        if(filter === "done") return todo.done;
+        if (filter === "undone") return !todo.done;
+        return true; 
+    });
+
     return <>
-        <TodoList todos={todos} removeTodo={removeTodo} toggleDone={toggleDone}></TodoList>
+        <div className="flex gap-4">
+            <label className="flex gap-2">
+                <input 
+                    type="checkbox" 
+                    checked={filter === "undone"} 
+                    id="sortDone" 
+                    onChange={() => setFilter(filter === "undone" ? "all" : "undone")}
+                />
+                Visa aktiva 
+            </label>
+            <label className="flex gap-2">
+                <input 
+                    type="checkbox" 
+                    checked={filter === "done"} 
+                    id="sortDone" 
+                    onChange={() => setFilter(filter === "done" ? "all" : "done")}
+                />
+                Visa avklarade
+            </label>
+        </div>
+        <TodoList todos={sortTodos} removeTodo={removeTodo} toggleDone={toggleDone}></TodoList>
         <AddTodo addTodo={addTodo}></AddTodo>
     </>
 };
