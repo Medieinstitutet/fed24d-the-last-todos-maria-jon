@@ -15,7 +15,7 @@ export const TodoApp = () => {
     };
 
     const [todos, setTodos] = useState<Todo[]>(loadTodosFromLocalStorage);
-    const [filter, setFilter] = useState<string>("all");
+    const [filter, setFilter] = useState<string>("undone");
 
     useEffect(() => {
         localStorage.setItem("todos", JSON.stringify(todos));
