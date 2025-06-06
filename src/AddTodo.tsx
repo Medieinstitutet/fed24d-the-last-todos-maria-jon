@@ -19,16 +19,16 @@ export const AddTodo = ({ addTodo }: AddTodoProps) => {
     }
 
     return <>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="p-4 rounded-lg bg-slate-900 flex flex-col gap-4">
             <label>
-                <span>
+                <h2 className="text-neutral-50">
                     Ny att-göra-punkt:
-                </span>
+                </h2>
                 <input 
                     type="text" 
                     value={newTodoContent}
                     onChange={handleChange}
-                    className="rounded-lg border-3 border-cyan-700 focus:border-slate-900"
+                    className="rounded-lg border-3 border-cyan-700 bg-neutral-50 focus:border-slate-900 w-full"
                 />
             </label>
             <button className="bg-cyan-700 text-neutral-50 hover:bg-slate-900">Lägg till</button>
