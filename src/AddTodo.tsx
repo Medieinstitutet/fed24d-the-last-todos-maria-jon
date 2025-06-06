@@ -28,9 +28,10 @@ export const AddTodo = ({ addTodo }: AddTodoProps) => {
                     type="text" 
                     value={newTodoContent}
                     onChange={handleChange}
+                    className="rounded-lg border-3 border-cyan-700 focus:border-slate-900"
                 />
             </label>
-            <button>Lägg till</button>
+            <button className="bg-cyan-700 text-neutral-50 hover:bg-slate-900">Lägg till</button>
         </form>
     </>
 
