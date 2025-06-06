@@ -21,9 +21,9 @@ export const AddTodo = ({ addTodo }: AddTodoProps) => {
     return <>
         <form onSubmit={handleSubmit} className="p-4 rounded-lg bg-slate-900 flex flex-col gap-4">
             <label>
-                <h2 className="text-neutral-50">
+                <p className="text-neutral-50">
                     Ny att-göra-punkt:
-                </h2>
+                </p>
                 <input 
                     type="text" 
                     value={newTodoContent}
