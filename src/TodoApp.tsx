@@ -52,6 +52,10 @@ export const TodoApp = () => {
     });
 
     return <>
+        <div className="p-4">
+            <AddTodo addTodo={addTodo}></AddTodo>
+        </div>
+        <h2>Att göra</h2>
         <div className="flex gap-4">
             <label className="flex gap-2">
                 <input 
@@ -73,6 +77,5 @@ export const TodoApp = () => {
             </label>
         </div>
         <TodoList todos={sortTodos} removeTodo={removeTodo} toggleDone={toggleDone}></TodoList>
-        <AddTodo addTodo={addTodo}></AddTodo>
     </>
 };
